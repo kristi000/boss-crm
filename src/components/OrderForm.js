@@ -2,6 +2,7 @@
 import React, { useState } from "react"
 
 const TYPE_OPTIONS = ["Provide Order", "Recharge Order", "Addon Order"]
+const SUBTYPE_OPTIONS = ["Prepaid", "Postpaid"]
 
 export default function OrderForm() {
   const [orderType, setOrderType] = useState("Provide Order")
@@ -49,8 +50,19 @@ export default function OrderForm() {
       </div>
       <div>
         <div className="flex justify-between gap-8">
-          <div>Order Type</div>
-          <div>input</div>
+          <div>Order Sub Type</div>
+          <div>
+            <select
+              value={orderType}
+              onChange={(e) => setOrderType(e.target.value)}
+            >
+              {SUBTYPE_OPTIONS.map((option) => (
+                <option value={option} key={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         <div className="flex justify-between gap-8">
           <div>MSISDN / ISDN</div>
