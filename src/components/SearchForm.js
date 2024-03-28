@@ -1,9 +1,8 @@
-
-import React, { useState } from 'react';
-import Modal from './Modal';
+import React, { useState } from "react"
+import Modal from "./Modal"
 
 export default function SearchForm() {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <div>
@@ -14,7 +13,5 @@ export default function SearchForm() {
         </Modal>
       )}
     </div>
-  );
+  )
 }
-```
-

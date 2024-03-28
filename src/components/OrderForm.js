@@ -6,6 +6,7 @@ const SUBTYPE_OPTIONS = ["Prepaid", "Postpaid"]
 
 export default function OrderForm() {
   const [orderType, setOrderType] = useState("Provide Order")
+  const [orderSubType, setOrderSubType] = useState("Prepaid")
   const [msisdn, msisdnSet] = useState("")
   const [showMsisdnModal, setShowMsisdnModal] = useState(false)
 
@@ -53,8 +54,8 @@ export default function OrderForm() {
           <div>Order Sub Type</div>
           <div>
             <select
-              value={orderType}
-              onChange={(e) => setOrderType(e.target.value)}
+              value={orderSubType}
+              onChange={(e) => setOrderSubType(e.target.value)}
             >
               {SUBTYPE_OPTIONS.map((option) => (
                 <option value={option} key={option}>
